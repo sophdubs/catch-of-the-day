@@ -20,6 +20,15 @@ class App extends React.Component {
     loadSampleFishes = () => {
         this.setState({fishes : sampleFishes});
     }
+
+    addToOrder = (key) => {
+        //Copy state
+        const order = {...this.state.order};
+        //Add to order or update number in order
+        order[key] = order[key] + 1 || 1;
+        //Call setState to update state object
+        this.setState({order});
+    }
     
     
     render() {
@@ -28,7 +37,7 @@ class App extends React.Component {
                 <div className="menu">
                     <Header tagline="Fresh SeaFood Market"/>
                     <ul className="fishes">
-                        {Object.keys(this.state.fishes).map(key => <Fish key={key} details={this.state.fishes[key]}/>)}
+                        {Object.keys(this.state.fishes).map(key => <Fish key={key} index={key} details={this.state.fishes[key]} addToOrder={this.addToOrder}/>)}
                     </ul>
                 </div>
                 <Order />  
