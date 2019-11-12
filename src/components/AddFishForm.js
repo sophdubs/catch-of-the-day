@@ -9,7 +9,7 @@ class AddFishForm extends React.Component {
     imageRef = React.createRef();
 
     static propTypes = {
-        addFish: PropTypes.func
+        addFish: PropTypes.func.isRequired
     }
     
     createFish = (event) => {

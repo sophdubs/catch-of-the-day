@@ -9,10 +9,10 @@ class EditFishForm extends React.Component {
             status: PropTypes.string,
             desc: PropTypes.string,
             image: PropTypes.string
-        }),
-        index: PropTypes.string,
-        updateFish: PropTypes.func,
-        deleteFish: PropTypes.func
+        }).isRequired,
+        index: PropTypes.string.isRequired,
+        updateFish: PropTypes.func.isRequired,
+        deleteFish: PropTypes.func.isRequired
     }
     
     handleChange = (event) => {
